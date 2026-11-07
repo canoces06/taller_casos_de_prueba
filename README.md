@@ -112,7 +112,8 @@ java -cp bin App
 javac -encoding UTF-8 -cp lib/junit-platform-console-standalone-1.14.4.jar -d bin src/*.java
 java -jar lib/junit-platform-console-standalone-1.14.4.jar --class-path bin --scan-class-path
 ```
-''' mermaid
+
+```mermaid
 graph TD
     A[Inicio] --> B{horas < 0 OR categoria < 1}
     B -- Sí --> C[Retorna -1.0]
@@ -132,5 +133,5 @@ graph TD
     
     J --> L[Retorna Salario]
     K --> L
- '''
+ ```
     
