@@ -112,6 +112,25 @@ java -cp bin App
 javac -encoding UTF-8 -cp lib/junit-platform-console-standalone-1.14.4.jar -d bin src/*.java
 java -jar lib/junit-platform-console-standalone-1.14.4.jar --class-path bin --scan-class-path
 ```
-
-
+''' mermaid
+graph TD
+    A[Inicio] --> B{horas < 0 OR categoria < 1}
+    B -- Sí --> C[Retorna -1.0]
+    B -- No --> D{Evaluar Categoría}
+    
+    D -- Caso 1 --> E[tarifa = 12000]
+    D -- Caso 2 --> F[tarifa = 17000]
+    D -- Caso 3 --> G[tarifa = 22000]
+    D -- Default --> H[Retorna -1.0]
+    
+    E --> I{horas > 40}
+    F --> I
+    G --> I
+    
+    I -- Sí --> J[Calcula salario con extras]
+    I -- No --> K[Calcula salario normal]
+    
+    J --> L[Retorna Salario]
+    K --> L
+ '''
     
